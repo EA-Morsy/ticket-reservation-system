@@ -1,0 +1,285 @@
+{
+  "info": {
+    "_postman_id": "9d68a9ad-3ab5-4c33-988e-cd5939c4c539",
+    "name": "ticket reservation system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "55491157"
+  },
+  "item": [
+    {
+      "name": "event",
+      "item": [
+        {
+          "name": "list events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://ticket_reservation.test/api/events",
+              "protocol": "https",
+              "host": [
+                "ticket_reservation",
+                "test"
+              ],
+              "path": [
+                "api",
+                "events"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get events",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://ticket_reservation.test/api/events/1",
+              "protocol": "https",
+              "host": [
+                "ticket_reservation",
+                "test"
+              ],
+              "path": [
+                "api",
+                "events",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get events seats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://ticket_reservation.test/api/events/1",
+              "protocol": "https",
+              "host": [
+                "ticket_reservation",
+                "test"
+              ],
+              "path": [
+                "api",
+                "events",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "reservations",
+      "item": [
+        {
+          "name": "get reservations",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://ticket_reservation.test/api/reservations",
+              "protocol": "https",
+              "host": [
+                "ticket_reservation",
+                "test"
+              ],
+              "path": [
+                "api",
+                "reservations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "create reservations",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"event_id\" : \"1\",\r\n    \"seat_numbers\" : [\"A1\",\"B1\"]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://ticket_reservation.test/api/reservations",
+              "protocol": "https",
+              "host": [
+                "ticket_reservation",
+                "test"
+              ],
+              "path": [
+                "api",
+                "reservations"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "pay",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "https://ticket_reservation.test/api/reservations/4/pay",
+              "protocol": "https",
+              "host": [
+                "ticket_reservation",
+                "test"
+              ],
+              "path": [
+                "api",
+                "reservations",
+                "4",
+                "pay"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "email",
+              "value": "ahmed@example.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "password",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://ticket_reservation.test/api/login",
+          "protocol": "https",
+          "host": [
+            "ticket_reservation",
+            "test"
+          ],
+          "path": [
+            "api",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "me",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"event_id\" : \"1\",\r\n    \"seat_numbers\" : [\"A1\",\"B1\"]\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://ticket_reservation.test/api/me",
+          "protocol": "https",
+          "host": [
+            "ticket_reservation",
+            "test"
+          ],
+          "path": [
+            "api",
+            "me"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "eman",
+              "type": "text"
+            },
+            {
+              "key": "email",
+              "value": "eman@gmail.com",
+              "type": "text"
+            },
+            {
+              "key": "password",
+              "value": "password",
+              "type": "text"
+            },
+            {
+              "key": "password_confirmation",
+              "value": "password",
+              "type": "text"
+            }
+          ]
+        },
+        "url": {
+          "raw": "https://ticket_reservation.test/api/register",
+          "protocol": "https",
+          "host": [
+            "ticket_reservation",
+            "test"
+          ],
+          "path": [
+            "api",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
