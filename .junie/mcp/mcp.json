@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/usr/local/bin/php",
+            "args": [
+                "/home/eman/Projects/ticket_reservation/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}

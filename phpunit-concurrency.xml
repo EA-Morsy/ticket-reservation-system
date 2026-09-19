@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true">
+    <testsuites>
+        <testsuite name="Concurrency">
+            <directory>tests/Feature/Concurrency</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="APP_KEY" value="base64:8D2O+SChGHHdJJ5cxSO07pNYO4m9rO4QnV4mQxdz9wE="/>
+        <env name="DB_CONNECTION" value="mysql"/>
+        <env name="DB_HOST" value="lerd-mysql"/>
+        <env name="DB_PORT" value="3306"/>
+        <env name="DB_DATABASE" value="ticket_reservation_test"/>
+        <env name="DB_USERNAME" value="root"/>
+        <env name="DB_PASSWORD" value="lerd"/>
+        <env name="PAYMENT_DRIVER" value="fake"/>
+    </php>
+</phpunit>
