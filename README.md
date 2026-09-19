@@ -112,3 +112,21 @@ vendor/bin/pint --dirty --format agent
 ```
 
 The normal suite and dedicated parallel-process concurrency suite both use `ticket_reservation_test` on MySQL. AI assistance was used for implementation and documentation; the test suite verifies the behavior described here.
+
+## Postman Collection
+
+Download the [Postman Collection](postman/ticket-reservation.postman_collection.json) and import it into Postman.
+
+1. Set `base_url` to your application's URL, for example `http://127.0.0.1:8000`.
+2. Run the **Register** or **Login** request.
+3. Copy `data.token` from the response and use it as the Bearer token for protected requests.
+4. Browse events, select available seats, create a reservation, and initiate payment.
+
+When using `PAYMENT_DRIVER=fake`, simulate the payment outcome from the project terminal using `data.payment_reference` from the payment initiation response:
+
+```bash
+php artisan payments:simulate success <payment_reference>
+php artisan payments:simulate failure <payment_reference>
+```
+
+Retrieve the reservation again to check its status and latest payment outcome.
